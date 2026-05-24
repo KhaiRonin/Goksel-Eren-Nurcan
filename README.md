@@ -25,6 +25,6 @@ I'm a **software engineer** who delivers production-ready products ranging from 
 
 ## Connect With Me
 - LinkedIn: [Göksel Eren Nurcan](https://www.linkedin.com/in/g%C3%B6ksel-eren-nurcan-a70079390/)
-- Email: your.name@mail.com *(replace with your preferred address)*
+- Email: gerennurcan@hotmail.com
 
 > I care about shipping maintainable, measurable products that deliver real value. If you want that mindset in your team, let’s talk.
