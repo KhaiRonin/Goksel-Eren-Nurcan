@@ -1,20 +1,28 @@
 # Hi, I'm Göksel Eren Nurcan 👋
 
-I'm a **full stack software engineer** who ships production-ready web apps, mobile products, and game prototypes. I enjoy turning real problems into clean, maintainable solutions — from CRM dashboards to realtime chat systems and Unity mobile games.
+I'm a **full stack software engineer** who ships production-ready web apps, desktop tools, mobile products, and game prototypes. I build real business systems — from e-commerce platforms and corporate sites to accounting software and CRM dashboards.
 
 - 🚀 Currently building **[DailyFix](https://github.com/KhaiRonin/DailyFix)**, a public archive of researched developer problems and practical fixes.
-- 🧩 Recently delivered a **Student CRM** stack with React, Supabase, realtime chat, role-based permissions, and Cloudflare deployment.
+- 🏢 Delivering client and in-house products for **DTL Software**, **Baromer Madencilik**, and the **ÇiçekSepetim** product family.
 - 🎮 Also developing **NanoCity Tycoon**, a Unity idle/tycoon game with grid placement, resource economy, and mobile-first UI.
 - 🎯 Open to mobile, full stack, and hybrid product teams that value shipping quality software consistently.
 
 ## Expertise & Tooling
 
-- **Languages:** TypeScript, JavaScript, C#, Dart, SQL
-- **Web & Backend:** React, Vite, REST APIs, Cloudflare Workers, Supabase (Auth, Postgres, Realtime, RLS)
-- **Mobile & Game:** Flutter, Unity (URP, mobile optimization, economy systems), Firebase/Firestore
-- **Practices:** Role-based access control, realtime sync, CI/CD, deploy pipelines, clean UI/UX
+- **Languages:** TypeScript, JavaScript, C#, Dart, Java, SQL
+- **Web & Backend:** React, Next.js, NestJS, Spring Boot, Vite, REST APIs, Cloudflare Workers, Supabase, Prisma, Redis
+- **Desktop & Mobile:** .NET WPF, Flutter, Unity (URP, mobile optimization, economy systems), Firebase/Firestore
+- **Practices:** Role-based access control, realtime sync, MVVM, CI/CD, deploy pipelines, clean UI/UX
 
-## Highlighted Projects
+## Business & Client Projects
+
+- **DTL Software (Landing Site)** – Corporate website for a software agency offering app development, bug fixing, web builds, and social media management. Built with modern HTML, CSS, and JavaScript.
+- **Baromer Madencilik (Spring Boot)** – Corporate website for a mining and construction company with project showcase, contact flow, and backend form handling using Spring Boot, Thymeleaf, and JPA.
+- **ÇiçekSepetim E-Commerce (Next.js + NestJS)** – Full e-commerce platform with admin panel, cart flow, product management, auto-translation, and a NestJS + Prisma backend with Redis support.
+- **ÇiçekSepetim RentaCar (Next.js + Prisma)** – Rent-a-car platform with vehicle listing, comparison, reservation flow, admin dashboard, and booking lead management.
+- **ÇiçekSepetim Muhasebe (.NET WPF + PostgreSQL)** – Desktop accounting and HR system with employee management, leave tracking, salary/advance records, vehicle management, audit logs, and Supabase PostgreSQL integration.
+
+## Product & Portfolio Projects
 
 - **[DailyFix](https://github.com/KhaiRonin/DailyFix)** – Daily researched fixes for real developer problems with source links, notes, and minimal examples.
 - **Student CRM (React + Supabase + Cloudflare)** – Auth, client chat, deal pipeline, ownership rules, and manager reassignment flows for a sales team MVP.
@@ -25,9 +33,9 @@ I'm a **full stack software engineer** who ships production-ready web apps, mobi
 ## What I'm Focused On Now
 
 - Full stack product delivery with auth, relational data, and realtime features
+- Business software for operations, e-commerce, and internal management
 - Publishing useful developer notes through DailyFix
 - Unity mobile optimization and scalable game economies
-- Building UIs that are clean, fast, and easy to maintain
 
 ## Connect With Me
 
