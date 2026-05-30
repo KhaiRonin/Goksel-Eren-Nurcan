@@ -3,7 +3,7 @@
 I'm a **full stack software engineer** who ships production-ready web apps, desktop tools, mobile products, and game prototypes. I build real business systems — from e-commerce platforms and corporate sites to accounting software and CRM dashboards.
 
 - 🚀 Currently building **[DailyFix](https://github.com/KhaiRonin/DailyFix)**, a public archive of researched developer problems and practical fixes.
-- 🏢 Delivering client and in-house products for **DTL Software**, **Baromer Madencilik**, and the **ÇiçekSepetim** product family.
+- 🏢 Delivering client and in-house products for **DTL Software**, **Baromer Madencilik**, the **ÇiçekSepetim** product family, **Van Piliç**, and **KampusEv**.
 - 🎮 Also developing **NanoCity Tycoon**, a Unity idle/tycoon game with grid placement, resource economy, and mobile-first UI.
 - 🎯 Open to mobile, full stack, and hybrid product teams that value shipping quality software consistently.
 
@@ -21,6 +21,8 @@ I'm a **full stack software engineer** who ships production-ready web apps, desk
 - **ÇiçekSepetim E-Commerce (Next.js + NestJS)** – Full e-commerce platform with admin panel, cart flow, product management, auto-translation, and a NestJS + Prisma backend with Redis support.
 - **ÇiçekSepetim RentaCar (Next.js + Prisma)** – Rent-a-car platform with vehicle listing, comparison, reservation flow, admin dashboard, and booking lead management.
 - **ÇiçekSepetim Muhasebe (.NET WPF + PostgreSQL)** – Desktop accounting and HR system with employee management, leave tracking, salary/advance records, vehicle management, audit logs, and Supabase PostgreSQL integration.
+- **Van Piliç / KasapApp (Flutter + Supabase)** – Production mobile commerce platform for butcher and food retail with product catalog, cart, order tracking, admin panel, NetGSM phone verification, IsyerimPOS 3D Secure payments, PDF receipts, and Google Play deployment.
+- **KampusEv (Next.js + Tailwind)** – Student housing and roommate listing platform for KKTC with listing filters, detail pages, ad creation, saved listings, and optional external API integration.
 
 ## Product & Portfolio Projects
 
@@ -34,6 +36,7 @@ I'm a **full stack software engineer** who ships production-ready web apps, desk
 
 - Full stack product delivery with auth, relational data, and realtime features
 - Business software for operations, e-commerce, and internal management
+- Mobile commerce platforms with payments, admin tools, and store operations
 - Publishing useful developer notes through DailyFix
 - Unity mobile optimization and scalable game economies
 
