@@ -27,6 +27,7 @@ if (!chrome) {
 }
 
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+fs.rmSync(outputPath, { force: true });
 const profileDirectory = fs.mkdtempSync(path.join(os.tmpdir(), "cv-chrome-"));
 
 try {
