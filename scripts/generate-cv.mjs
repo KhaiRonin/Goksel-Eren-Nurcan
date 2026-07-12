@@ -44,15 +44,23 @@ try {
     ],
     {
       encoding: "utf8",
-      timeout: 30_000,
+      timeout: 12_000,
     },
   );
 
-  if (result.error) {
+  const completePdf =
+    fs.existsSync(outputPath) &&
+    fs.statSync(outputPath).size > 0 &&
+    fs.readFileSync(outputPath).subarray(-1024).includes(Buffer.from("%%EOF"));
+
+  // Some containerised Chrome builds keep a background process alive after
+  // successfully writing the PDF. Accept that specific timeout only when the
+  // generated file is complete.
+  if (result.error && !(result.error.code === "ETIMEDOUT" && completePdf)) {
     throw result.error;
   }
 
-  if (result.status !== 0 || !fs.existsSync(outputPath)) {
+  if (!completePdf) {
     throw new Error(
       `Chrome failed to generate the PDF.\n${result.stderr || result.stdout}`,
     );

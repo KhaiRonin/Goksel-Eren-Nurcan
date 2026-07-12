@@ -191,6 +191,10 @@
         padding: 10mm 18mm 13mm 22mm;
       }
 
+      .page:not(.page-two) .body {
+        padding-top: 8.5mm;
+      }
+
       .eyebrow {
         margin-bottom: 2mm;
         color: var(--blue);
@@ -217,6 +221,10 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 2.3mm 4mm;
         margin-top: 7mm;
+      }
+
+      .page:not(.page-two) .expertise {
+        margin-top: 5.8mm;
       }
 
       .expertise-item {
@@ -255,6 +263,10 @@
         text-transform: uppercase;
       }
 
+      .page:not(.page-two) .section-heading {
+        margin-top: 6.5mm;
+      }
+
       .section-heading::after {
         flex: 1;
         height: 1px;
@@ -283,6 +295,10 @@
 
       .job + .job {
         margin-top: 5mm;
+      }
+
+      .page:not(.page-two) .job + .job {
+        margin-top: 3.8mm;
       }
 
       .job::before {
@@ -352,6 +368,10 @@
       .compact li {
         font-size: 8.55pt;
         line-height: 1.43;
+      }
+
+      .page:not(.page-two) .compact li {
+        line-height: 1.38;
       }
 
       .page-two .header {
