@@ -5,6 +5,7 @@
   "description": "Utilities and generated files for Göksel Eren Nurcan's CV.",
   "type": "module",
   "scripts": {
+    "build:cv": "node scripts/generate-cv.mjs",
     "update:cv": "node scripts/update-cv-contact.mjs"
   },
   "repository": {

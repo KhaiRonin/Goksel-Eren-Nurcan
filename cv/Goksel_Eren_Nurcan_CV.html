@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Göksel Eren Nurcan — Full-Stack &amp; Mobile Developer</title>
+    <style>
+      @font-face {
+        font-family: "Noto Sans";
+        src: url("../node_modules/@fontsource/noto-sans/files/noto-sans-latin-400-normal.woff2")
+          format("woff2");
+        font-style: normal;
+        font-weight: 400;
+      }
+
+      @font-face {
+        font-family: "Noto Sans";
+        src: url("../node_modules/@fontsource/noto-sans/files/noto-sans-latin-500-normal.woff2")
+          format("woff2");
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      @font-face {
+        font-family: "Noto Sans";
+        src: url("../node_modules/@fontsource/noto-sans/files/noto-sans-latin-600-normal.woff2")
+          format("woff2");
+        font-style: normal;
+        font-weight: 600;
+      }
+
+      @font-face {
+        font-family: "Noto Sans";
+        src: url("../node_modules/@fontsource/noto-sans/files/noto-sans-latin-700-normal.woff2")
+          format("woff2");
+        font-style: normal;
+        font-weight: 700;
+      }
+
+      :root {
+        --ink: #172235;
+        --muted: #56657a;
+        --navy: #10263f;
+        --blue: #166b8f;
+        --teal: #16a4a4;
+        --teal-soft: #e8f6f5;
+        --line: #dce4ea;
+        --paper: #ffffff;
+        --page: #e9edf1;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--page);
+        color: var(--ink);
+        font-family: "Noto Sans", Arial, sans-serif;
+        font-size: 9.3pt;
+        line-height: 1.48;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        position: relative;
+        width: 210mm;
+        height: 297mm;
+        margin: 10mm auto;
+        overflow: hidden;
+        background: var(--paper);
+        box-shadow: 0 8px 30px rgb(16 38 63 / 12%);
+        page-break-after: always;
+      }
+
+      .page:last-child {
+        page-break-after: auto;
+      }
+
+      .page::before {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 3.2mm;
+        background: linear-gradient(180deg, var(--teal), var(--blue) 72%);
+        content: "";
+      }
+
+      .header {
+        position: relative;
+        min-height: 53mm;
+        padding: 17mm 18mm 11mm 22mm;
+        overflow: hidden;
+        background: var(--navy);
+        color: #fff;
+      }
+
+      .header::after {
+        position: absolute;
+        right: -20mm;
+        bottom: -30mm;
+        width: 88mm;
+        height: 88mm;
+        border: 1px solid rgb(255 255 255 / 8%);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 12mm rgb(255 255 255 / 2.5%),
+          0 0 0 26mm rgb(255 255 255 / 2%);
+        content: "";
+      }
+
+      .identity {
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 24.8pt;
+        font-weight: 700;
+        letter-spacing: -0.7pt;
+        line-height: 1.1;
+      }
+
+      .role {
+        margin-top: 3mm;
+        color: #61d8d3;
+        font-size: 10.2pt;
+        font-weight: 600;
+        letter-spacing: 1.7pt;
+        text-transform: uppercase;
+      }
+
+      .contact {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2.2mm 6mm;
+        margin-top: 6mm;
+        color: #dbe7ef;
+        font-size: 8.6pt;
+      }
+
+      .contact a,
+      .contact span {
+        white-space: nowrap;
+      }
+
+      .contact a::before,
+      .contact span::before {
+        display: inline-block;
+        width: 2.8mm;
+        margin-right: 1.2mm;
+        color: #61d8d3;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .location::before {
+        content: "●";
+        font-size: 6pt;
+      }
+
+      .phone::before {
+        content: "T";
+      }
+
+      .email::before {
+        content: "@";
+      }
+
+      .github::before {
+        content: "G";
+      }
+
+      .linkedin::before {
+        content: "in";
+        font-size: 7pt;
+      }
+
+      .body {
+        padding: 10mm 18mm 13mm 22mm;
+      }
+
+      .eyebrow {
+        margin-bottom: 2mm;
+        color: var(--blue);
+        font-size: 7.2pt;
+        font-weight: 700;
+        letter-spacing: 1.45pt;
+        text-transform: uppercase;
+      }
+
+      .profile {
+        margin: 0;
+        color: #334155;
+        font-size: 9.55pt;
+        line-height: 1.58;
+      }
+
+      .profile strong {
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      .expertise {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.3mm 4mm;
+        margin-top: 7mm;
+      }
+
+      .expertise-item {
+        min-height: 13mm;
+        padding: 2.8mm 3.2mm;
+        border-left: 1.2mm solid var(--teal);
+        background: #f5f8fa;
+      }
+
+      .expertise-label {
+        display: block;
+        margin-bottom: 0.8mm;
+        color: var(--blue);
+        font-size: 7.1pt;
+        font-weight: 700;
+        letter-spacing: 0.6pt;
+        text-transform: uppercase;
+      }
+
+      .expertise-value {
+        color: #38485b;
+        font-size: 8.2pt;
+        line-height: 1.38;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: center;
+        gap: 3mm;
+        margin: 8mm 0 4.2mm;
+        color: var(--navy);
+        font-size: 11pt;
+        font-weight: 700;
+        letter-spacing: 1.2pt;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .section-heading::after {
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, var(--teal), var(--line));
+        content: "";
+      }
+
+      .timeline {
+        position: relative;
+      }
+
+      .timeline::before {
+        position: absolute;
+        top: 2mm;
+        bottom: 1.5mm;
+        left: 2.1mm;
+        width: 1px;
+        background: var(--line);
+        content: "";
+      }
+
+      .job {
+        position: relative;
+        padding-left: 8mm;
+      }
+
+      .job + .job {
+        margin-top: 5mm;
+      }
+
+      .job::before {
+        position: absolute;
+        top: 1.7mm;
+        left: 0;
+        width: 4.4mm;
+        height: 4.4mm;
+        border: 1.2mm solid #fff;
+        border-radius: 50%;
+        background: var(--teal);
+        box-shadow: 0 0 0 0.35mm var(--teal);
+        content: "";
+      }
+
+      .job-head {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 4mm;
+        align-items: baseline;
+      }
+
+      .job-title {
+        font-size: 10pt;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+
+      .job-date {
+        color: var(--blue);
+        font-size: 8pt;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+
+      .company {
+        margin-top: 0.5mm;
+        color: var(--muted);
+        font-size: 8.4pt;
+        font-weight: 600;
+      }
+
+      ul {
+        margin: 2mm 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      li {
+        position: relative;
+        padding-left: 3.8mm;
+        color: #3f4d60;
+      }
+
+      li + li {
+        margin-top: 1.15mm;
+      }
+
+      li::before {
+        position: absolute;
+        left: 0.5mm;
+        color: var(--teal);
+        font-weight: 700;
+        content: "›";
+      }
+
+      .compact li {
+        font-size: 8.55pt;
+        line-height: 1.43;
+      }
+
+      .page-two .header {
+        min-height: 33mm;
+        padding-top: 11mm;
+        padding-bottom: 8mm;
+      }
+
+      .page-two h1 {
+        font-size: 17.5pt;
+      }
+
+      .page-two .role {
+        margin-top: 2mm;
+        font-size: 8.6pt;
+      }
+
+      .page-two .body {
+        padding-top: 8mm;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4.5mm;
+      }
+
+      .project {
+        min-height: 45mm;
+        padding: 4.4mm;
+        border: 1px solid var(--line);
+        border-top: 1.4mm solid var(--teal);
+        border-radius: 1.2mm;
+        background: #fff;
+      }
+
+      .project-category {
+        color: var(--blue);
+        font-size: 6.9pt;
+        font-weight: 700;
+        letter-spacing: 0.8pt;
+        text-transform: uppercase;
+      }
+
+      .project-title {
+        margin-top: 1mm;
+        color: var(--navy);
+        font-size: 9.8pt;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      .project-stack {
+        margin-top: 1.2mm;
+        color: var(--teal);
+        font-size: 7.8pt;
+        font-weight: 600;
+      }
+
+      .project p {
+        margin: 2mm 0 0;
+        color: #46566a;
+        font-size: 8.1pt;
+        line-height: 1.46;
+      }
+
+      .project-link {
+        display: inline-block;
+        margin-top: 2.2mm;
+        color: var(--blue);
+        font-size: 7.6pt;
+        font-weight: 600;
+      }
+
+      .detail-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 8mm;
+      }
+
+      .detail-card {
+        padding: 4mm;
+        background: #f5f8fa;
+      }
+
+      .detail-title {
+        color: var(--navy);
+        font-size: 9pt;
+        font-weight: 700;
+      }
+
+      .detail-meta {
+        margin-top: 0.8mm;
+        color: var(--blue);
+        font-size: 7.8pt;
+        font-weight: 600;
+      }
+
+      .detail-copy {
+        margin-top: 1.7mm;
+        color: #4b5a6c;
+        font-size: 8pt;
+        line-height: 1.45;
+      }
+
+      .language {
+        display: flex;
+        justify-content: space-between;
+        gap: 3mm;
+        padding: 2mm 0;
+        border-bottom: 1px solid var(--line);
+        color: #405064;
+        font-size: 8.2pt;
+      }
+
+      .language:last-child {
+        border-bottom: 0;
+      }
+
+      .language strong {
+        color: var(--navy);
+      }
+
+      .footer {
+        position: absolute;
+        right: 18mm;
+        bottom: 8mm;
+        left: 22mm;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2.5mm;
+        border-top: 1px solid var(--line);
+        color: #718096;
+        font-size: 7.1pt;
+      }
+
+      .footer strong {
+        color: var(--blue);
+        font-weight: 600;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        html,
+        body {
+          background: #fff;
+        }
+
+        .page {
+          margin: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article class="page">
+        <header class="header">
+          <div class="identity">
+            <h1>Göksel Eren Nurcan</h1>
+            <div class="role">Full-Stack &amp; Mobile Developer</div>
+          </div>
+          <div class="contact" aria-label="Contact information">
+            <span class="location">Vienna, Austria</span>
+            <a class="phone" href="tel:+4367764812527">+43 677 648 12527</a>
+            <a class="email" href="mailto:gerennurcan@hotmail.com"
+              >gerennurcan@hotmail.com</a
+            >
+            <a class="github" href="https://github.com/KhaiRonin"
+              >github.com/KhaiRonin</a
+            >
+            <a
+              class="linkedin"
+              href="https://www.linkedin.com/in/g%C3%B6ksel-eren-nurcan-a70079390/"
+              >LinkedIn</a
+            >
+          </div>
+        </header>
+
+        <div class="body">
+          <section>
+            <div class="eyebrow">Professional Profile</div>
+            <p class="profile">
+              Product-minded developer who delivers
+              <strong>web, mobile, desktop, and business software</strong> from
+              data model and API through polished UI and deployment. Hands-on
+              experience spans e-commerce, payments, operational dashboards,
+              realtime systems, and workflow automation. Brings an unusual
+              combination of engineering ownership and former service
+              operations leadership—translating business needs into reliable,
+              maintainable products.
+            </p>
+          </section>
+
+          <section class="expertise" aria-label="Technical expertise">
+            <div class="expertise-item">
+              <span class="expertise-label">Languages</span>
+              <div class="expertise-value">
+                TypeScript · JavaScript · C# · Dart · Java · Python · SQL
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span class="expertise-label">Web &amp; Backend</span>
+              <div class="expertise-value">
+                React · Next.js · NestJS · Spring Boot · REST APIs · Prisma
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span class="expertise-label">Mobile &amp; Desktop</span>
+              <div class="expertise-value">
+                Flutter · .NET WPF · Unity · MVVM · Google Play delivery
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span class="expertise-label">Data, Cloud &amp; Delivery</span>
+              <div class="expertise-value">
+                PostgreSQL · Supabase · Firebase · Redis · Cloudflare · CI/CD
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="section-heading">Professional Experience</h2>
+            <div class="timeline">
+              <article class="job">
+                <div class="job-head">
+                  <div class="job-title">Full Stack Developer</div>
+                  <div class="job-date">Sep 2025 — Jan 2026</div>
+                </div>
+                <div class="company">Van Piliç · Food retail &amp; commerce</div>
+                <ul class="compact">
+                  <li>
+                    Delivered a production commerce experience spanning product
+                    catalogue, cart, order tracking, customer flows, and
+                    operational admin tooling.
+                  </li>
+                  <li>
+                    Implemented phone verification, 3D Secure payments, PDF
+                    receipts, and backend data flows; supported release to
+                    Google Play.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="job">
+                <div class="job-head">
+                  <div class="job-title">Full Stack Developer</div>
+                  <div class="job-date">Aug 2024 — Nov 2024</div>
+                </div>
+                <div class="company">
+                  Wrench Garage · Automotive service technology
+                </div>
+                <ul class="compact">
+                  <li>
+                    Designed and shipped an AI-assisted service tracking and
+                    fleet management system with realtime job status and
+                    invoicing workflows.
+                  </li>
+                  <li>
+                    Centralised maintenance history, reminders, and reporting
+                    to reduce dropped work and duplicated communication.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="job">
+                <div class="job-head">
+                  <div class="job-title">Assistant Chief of Service</div>
+                  <div class="job-date">Jun 2022 — Aug 2024</div>
+                </div>
+                <div class="company">
+                  Schindler · Elevators &amp; escalators
+                </div>
+                <ul class="compact">
+                  <li>
+                    Coordinated maintenance crews, scheduling, stakeholder
+                    communication, and safety and compliance follow-through in
+                    a service-critical environment.
+                  </li>
+                  <li>
+                    Developed an SLA-minded approach to prioritisation, incident
+                    handling, ownership, and clear communication across teams.
+                  </li>
+                </ul>
+              </article>
+
+              <article class="job">
+                <div class="job-head">
+                  <div class="job-title">
+                    Independent Software Developer
+                  </div>
+                  <div class="job-date">Feb 2018 — Present</div>
+                </div>
+                <div class="company">
+                  Freelance engagements &amp; proprietary products
+                </div>
+                <ul class="compact">
+                  <li>
+                    Build end-to-end products for e-commerce, accounting, CRM,
+                    automotive, property, and corporate use cases across web,
+                    mobile, and desktop.
+                  </li>
+                  <li>
+                    Own discovery, architecture, implementation, deployment,
+                    and iterative improvement with direct stakeholder input.
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <footer class="footer">
+          <span>Göksel Eren Nurcan · Curriculum Vitae</span>
+          <strong>01 / 02</strong>
+        </footer>
+      </article>
+
+      <article class="page page-two">
+        <header class="header">
+          <div class="identity">
+            <h1>Selected Product Work</h1>
+            <div class="role">
+              Business systems · Commerce · Mobile · Realtime
+            </div>
+          </div>
+        </header>
+
+        <div class="body">
+          <section class="project-grid">
+            <article class="project">
+              <div class="project-category">Commerce &amp; Operations</div>
+              <div class="project-title">ÇiçekSepetim Product Suite</div>
+              <div class="project-stack">
+                Next.js · NestJS · Prisma · Redis · .NET WPF · PostgreSQL
+              </div>
+              <p>
+                Built a multi-product suite covering e-commerce and admin,
+                vehicle reservation and lead management, plus desktop
+                accounting and HR workflows with role-based controls and audit
+                history.
+              </p>
+            </article>
+
+            <article class="project">
+              <div class="project-category">Mobile Commerce</div>
+              <div class="project-title">Van Piliç / KasapApp</div>
+              <div class="project-stack">
+                Flutter · Supabase · 3D Secure · PDF · Google Play
+              </div>
+              <p>
+                Delivered customer and store workflows for food retail,
+                including catalogue, cart, orders, phone verification, payment
+                processing, receipt generation, and administration.
+              </p>
+              <a
+                class="project-link"
+                href="https://play.google.com/store/apps/details?id=com.vanpilic.kasapapp&amp;hl=en"
+                >View on Google Play →</a
+              >
+            </article>
+
+            <article class="project">
+              <div class="project-category">Sales Operations</div>
+              <div class="project-title">Student CRM</div>
+              <div class="project-stack">
+                React · Supabase · Cloudflare · Realtime
+              </div>
+              <p>
+                Created an MVP with authentication, client chat, deal pipeline,
+                ownership rules, and manager reassignment flows for a sales
+                organisation.
+              </p>
+              <a
+                class="project-link"
+                href="https://github.com/KhaiRonin/student-crm"
+                >View source on GitHub →</a
+              >
+            </article>
+
+            <article class="project">
+              <div class="project-category">Property Marketplace</div>
+              <div class="project-title">KampusEv</div>
+              <div class="project-stack">Next.js · TypeScript · Tailwind CSS</div>
+              <p>
+                Built a student housing and roommate marketplace with listing
+                filters, detail pages, ad creation, saved listings, and support
+                for external data integration.
+              </p>
+            </article>
+
+            <article class="project">
+              <div class="project-category">Corporate Platforms</div>
+              <div class="project-title">DTL Software &amp; Baromer</div>
+              <div class="project-stack">
+                JavaScript · Spring Boot · Thymeleaf · JPA
+              </div>
+              <p>
+                Delivered corporate web presences and lead flows for software,
+                mining, and construction businesses, including project
+                showcases and backend form handling.
+              </p>
+              <a class="project-link" href="https://www.dtlsoftware.com/"
+                >DTL Software</a
+              >
+              <span class="project-link"> · </span>
+              <a class="project-link" href="https://baromer.com/">Baromer</a>
+            </article>
+
+            <article class="project">
+              <div class="project-category">Engineering &amp; Game Systems</div>
+              <div class="project-title">DailyFix &amp; NanoCity Tycoon</div>
+              <div class="project-stack">
+                JavaScript · Technical writing · Unity · C#
+              </div>
+              <p>
+                Publish researched fixes for recurring developer problems while
+                building a mobile-first city tycoon with grid placement,
+                resource economy, boosts, and save systems.
+              </p>
+              <a
+                class="project-link"
+                href="https://github.com/KhaiRonin/DailyFix"
+                >Explore DailyFix →</a
+              >
+            </article>
+          </section>
+
+          <section>
+            <h2 class="section-heading">Education &amp; Additional Details</h2>
+            <div class="detail-grid">
+              <div>
+                <article class="detail-card">
+                  <div class="detail-title">
+                    Self-Directed Software &amp; Game Development
+                  </div>
+                  <div class="detail-meta">2018 — Present</div>
+                  <div class="detail-copy">
+                    Continuous project-based learning through shipped web,
+                    mobile, desktop, and Unity products. Focused on production
+                    architecture, maintainability, deployment, and practical
+                    problem solving.
+                  </div>
+                </article>
+                <article class="detail-card" style="margin-top: 3mm">
+                  <div class="detail-title">
+                    METU Game Jam · Participation Certificate
+                  </div>
+                  <div class="detail-copy">
+                    Rapid prototyping, collaborative delivery, and time-boxed
+                    product development at Middle East Technical University.
+                  </div>
+                </article>
+              </div>
+              <div class="detail-card">
+                <div class="eyebrow">Languages</div>
+                <div class="language">
+                  <strong>Turkish</strong>
+                  <span>Native</span>
+                </div>
+                <div class="language">
+                  <strong>English</strong>
+                  <span>Professional working</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <footer class="footer">
+          <span
+            >Vienna, Austria ·
+            <a href="mailto:gerennurcan@hotmail.com"
+              >gerennurcan@hotmail.com</a
+            ></span
+          >
+          <strong>02 / 02</strong>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>
