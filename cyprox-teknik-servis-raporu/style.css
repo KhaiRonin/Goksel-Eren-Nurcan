@@ -100,11 +100,16 @@ body {
 
 .masthead {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 1fr 1.15fr 26mm;
   align-items: center;
-  gap: 6mm;
-  padding-bottom: 3.2mm;
-  border-bottom: 1.6pt solid var(--navy);
+  gap: 4mm;
+  padding-bottom: 4mm;
+  background-image:
+    linear-gradient(var(--navy), var(--navy)),
+    linear-gradient(var(--gold), var(--gold));
+  background-size: 100% 1.45pt, 100% 0.45pt;
+  background-position: left bottom 1.5pt, left bottom;
+  background-repeat: no-repeat;
 }
 
 .brand {
@@ -139,7 +144,8 @@ body {
 }
 
 .doc-title {
-  text-align: right;
+  text-align: center;
+  padding: 0 2mm;
 }
 
 .doc-kicker {
@@ -147,7 +153,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #8c6a32;
   margin-bottom: 0.8mm;
 }
 
@@ -166,15 +172,18 @@ body {
 }
 
 .copy-seal {
-  width: 24mm;
-  height: 24mm;
-  border: 1.1pt solid var(--navy);
+  width: 23mm;
+  height: 23mm;
+  border: 1.15pt solid var(--navy);
+  box-shadow: inset 0 0 0 0.85pt var(--gold);
+  border-radius: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  rotate: -6deg;
+  rotate: -8deg;
+  justify-self: end;
 }
 
 .copy-seal span {
@@ -196,7 +205,12 @@ body {
   display: grid;
   grid-template-columns: 1.15fr 0.8fr 1fr 1.35fr;
   gap: 3.5mm;
+  align-items: end;
   padding: 1.5mm 0 0.5mm;
+}
+
+.meta .field {
+  margin-bottom: 0;
 }
 
 .info-grid {
@@ -347,7 +361,7 @@ tbody tr td:first-child {
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-height: 28mm;
+  min-height: 34mm;
 }
 
 .ruled {
