@@ -3,128 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cyprox — Teknik Servis Tutanağı</title>
+  <title>Cyprox — Teknik Servis Raporu</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="toolbar no-print">
-    <span>A4 resmi tutanak — yazdırırken kenar boşluğu: Yok / None · Müşteri nüshası</span>
+    <span>A4 · 210 × 297 mm — yazdırırken kenar boşluğu: Yok / None</span>
     <button type="button" onclick="window.print()">Yazdır / PDF</button>
   </div>
 
-  <article class="sheet" aria-label="Cyprox teknik servis tutanağı">
-    <div class="frame" aria-hidden="true"></div>
-    <div class="frame-gold" aria-hidden="true"></div>
-    <div class="watermark" aria-hidden="true">CYPROX</div>
-
+  <article class="sheet">
     <header class="masthead">
       <div class="brand">
-        <div class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 48 48" fill="none">
-            <rect x="1.5" y="1.5" width="45" height="45" stroke="currentColor" stroke-width="1.5" />
-            <path d="M33.2 14.6c-2-1.7-4.7-2.7-8.2-2.7-8.1 0-13.5 5.6-13.5 12.6S16.9 37 25 37c3.6 0 6.4-1.1 8.4-2.9l-2.3-3.5c-1.4 1.2-3.3 1.9-5.9 1.9-5.1 0-8.4-3.6-8.4-8.6s3.3-8.6 8.4-8.6c2.5 0 4.4.7 5.8 1.9l2.2-3.6z" fill="currentColor" />
-          </svg>
-        </div>
-        <div>
-          <p class="wordmark">Cyprox</p>
-          <p class="brand-line">Yetkili Teknik Servis</p>
-        </div>
+        <p class="wordmark">Cyprox</p>
+        <p class="tagline">Yetkili Teknik Servis</p>
       </div>
-      <div class="doc-title">
-        <p class="doc-kicker">Resmî kayıt belgesi</p>
-        <h1>Teknik Servis Tutanağı</h1>
-        <p class="doc-sub">Yerinde servis · Müşteri nüshası</p>
-      </div>
-      <div class="copy-seal">
-        <span>Nüsha</span>
-        <strong>Müşteri</strong>
+      <div class="titles">
+        <h1>Teknik Servis Raporu</h1>
+        <p class="contact">Destek hattı 0000 000 00 00 · servis@cyprox.com</p>
       </div>
     </header>
 
-    <section class="meta">
+    <section class="topbar">
       <label class="field">
         <span>Rapor no</span>
-        <input type="text" placeholder="CYP — ————" />
+        <input type="text" />
       </label>
       <label class="field">
         <span>Tarih</span>
         <input type="text" />
       </label>
       <label class="field">
-        <span>Varış / ayrılış</span>
-        <input type="text" placeholder="—— : ——  /  —— : ——" />
+        <span>Saat giriş / çıkış</span>
+        <input type="text" />
       </label>
-      <div class="field checks">
+      <div class="field">
         <span>Servis türü</span>
-        <div class="check-row">
-          <label class="chk"><i></i> Arıza</label>
-          <label class="chk"><i></i> Periyodik</label>
-          <label class="chk"><i></i> Kurulum</label>
+        <div class="options">
+          <label class="opt"><i></i>Arıza</label>
+          <label class="opt"><i></i>Periyodik</label>
+          <label class="opt"><i></i>Kurulum</label>
         </div>
       </div>
     </section>
 
-    <section class="info-grid">
-      <div class="panel">
-        <h2>Müşteri</h2>
-        <label class="field">
-          <span>Ünvan / ad soyad</span>
-          <input type="text" />
-        </label>
-        <label class="field">
-          <span>Adres</span>
-          <input type="text" />
-        </label>
-        <div class="split">
-          <label class="field">
-            <span>Telefon</span>
-            <input type="text" />
-          </label>
-          <label class="field">
-            <span>Yetkili kişi</span>
-            <input type="text" />
-          </label>
+    <section class="duo">
+      <div class="card">
+        <h2>Müşteri bilgileri</h2>
+        <label class="field"><span>Ünvan / ad soyad</span><input type="text" /></label>
+        <label class="field"><span>Adres</span><input type="text" /></label>
+        <div class="row2">
+          <label class="field"><span>Telefon</span><input type="text" /></label>
+          <label class="field"><span>Yetkili kişi</span><input type="text" /></label>
         </div>
       </div>
-      <div class="panel">
-        <h2>Cihaz</h2>
-        <div class="split">
-          <label class="field">
-            <span>Model</span>
-            <input type="text" />
-          </label>
-          <label class="field">
-            <span>Seri no</span>
-            <input type="text" />
-          </label>
+      <div class="card">
+        <h2>Cihaz bilgileri</h2>
+        <div class="row2">
+          <label class="field"><span>Marka / model</span><input type="text" /></label>
+          <label class="field"><span>Seri numarası</span><input type="text" /></label>
         </div>
-        <div class="split">
-          <label class="field">
-            <span>Sayac (total / copy)</span>
-            <input type="text" />
-          </label>
-          <div class="field checks">
-            <span>Garanti</span>
-            <div class="check-row">
-              <label class="chk"><i></i> Var</label>
-              <label class="chk"><i></i> Yok</label>
+        <div class="row2">
+          <label class="field"><span>Sayaç (total / copy)</span><input type="text" /></label>
+          <div class="field">
+            <span>Garanti kapsamı</span>
+            <div class="options">
+              <label class="opt"><i></i>Var</label>
+              <label class="opt"><i></i>Yok</label>
             </div>
           </div>
         </div>
-        <label class="field">
-          <span>Cihaz konumu / not</span>
-          <input type="text" />
-        </label>
+        <label class="field"><span>Cihazın bulunduğu bölüm</span><input type="text" /></label>
       </div>
     </section>
 
     <section class="work">
-      <div class="section-head">
-        <h2>Yapılan iş ve malzeme</h2>
-        <p>El yazısı ile doldurunuz. Kullanılmayan satırlar boş bırakılır.</p>
+      <div class="head">
+        <h2>Yapılan işlem ve kullanılan malzeme</h2>
+        <p>Kullanılmayan satırlar boş bırakılır.</p>
       </div>
       <table>
         <thead>
@@ -132,64 +91,54 @@
             <th class="c-no">No</th>
             <th class="c-code">Arıza kodu</th>
             <th>Arıza nedeni</th>
-            <th>Yapılan iş / servis detayı</th>
+            <th>Yapılan işlem / servis detayı</th>
             <th>Değişen parça / malzeme</th>
             <th class="c-pcode">Parça kodu</th>
             <th class="c-qty">Adet</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>01</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>02</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>03</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>04</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>05</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>06</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>07</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-          <tr><td>08</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>7</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>9</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
         </tbody>
       </table>
     </section>
 
     <section class="notes">
-      <div class="section-head">
+      <div class="head">
         <h2>Genel notlar ve tavsiyeler</h2>
-        <p>Bakım önerisi, risk ve bir sonraki servis tarihi.</p>
+        <p>Bakım önerisi, uyarılar, bir sonraki servis tarihi.</p>
       </div>
       <div class="ruled"></div>
     </section>
 
-    <section class="handover">
-      <div class="sign-card">
-        <h2>Teslim alan / parça kodları</h2>
-        <p class="hint">Sökülen veya bırakılan parçalar</p>
-        <div class="sign-space tall"></div>
+    <section class="signs">
+      <div class="sign">
+        <h2>Teslim alınan / bırakılan parça</h2>
+        <div class="space lines"></div>
       </div>
-      <div class="sign-card">
+      <div class="sign">
         <h2>Müşteri onayı</h2>
         <label class="field"><span>Adı soyadı</span><input type="text" /></label>
-        <div class="sign-space">
-          <span class="ghost">İmza / kaşe</span>
-        </div>
-        <label class="field"><span>Tarih</span><input type="text" /></label>
+        <div class="space"><span class="ghost">İmza / kaşe</span></div>
       </div>
-      <div class="sign-card">
+      <div class="sign">
         <h2>Teknisyen</h2>
         <label class="field"><span>Adı soyadı / sicil</span><input type="text" /></label>
-        <div class="sign-space">
-          <span class="ghost">İmza</span>
-        </div>
-        <label class="field"><span>Tarih</span><input type="text" /></label>
+        <div class="space"><span class="ghost">İmza</span></div>
       </div>
     </section>
 
-    <footer class="legal">
-      <p>
-        İşbu tutanak, sahada tamamlanan teknik işlemin resmî kaydıdır.
-        Form doldurulduktan sonra bir nüsha müşteriye teslim edilir; bir nüsha serviste saklanır.
-        İmza, belirtilen işin yapıldığını ve cihazın teslim alındığını teyit eder.
-      </p>
-      <p class="legal-meta">Cyprox Yetkili Teknik Servis · Fotokopi, yazıcı ve çok fonksiyonlu cihazlar · Müşteri nüshası</p>
+    <footer class="foot">
+      <p>Bu rapor, belirtilen tarihte yapılan teknik işlemin kaydıdır. İmza, işin tamamlandığını ve cihazın çalışır durumda teslim edildiğini onaylar.</p>
+      <p class="mark">Cyprox Yetkili Teknik Servis</p>
     </footer>
   </article>
 </body>
