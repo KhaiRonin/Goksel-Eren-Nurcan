@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cyprox — Teknik Servis Raporu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="toolbar no-print">
+    <span>A4 · 210 × 297 mm — yazdırırken kenar boşluğu: Yok / None</span>
+    <button type="button" onclick="window.print()">Yazdır / PDF</button>
+  </div>
+
+  <article class="sheet">
+    <header class="masthead">
+      <div class="brand">
+        <p class="wordmark">Cyprox</p>
+        <p class="tagline">Yetkili Teknik Servis</p>
+      </div>
+      <div class="titles">
+        <h1>Teknik Servis Raporu</h1>
+        <p class="contact">0533 870 26 80 · info@cyprox.com.tr</p>
+      </div>
+    </header>
+
+    <section class="topbar">
+      <label class="field">
+        <span>Tarih</span>
+        <input type="text" />
+      </label>
+      <label class="field">
+        <span>Saat giriş / çıkış</span>
+        <input type="text" />
+      </label>
+      <div class="field">
+        <span>Servis türü</span>
+        <div class="options">
+          <label class="opt"><i></i>Arıza</label>
+          <label class="opt"><i></i>Periyodik</label>
+          <label class="opt"><i></i>Kurulum</label>
+          <label class="opt"><i></i>Garanti</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="duo">
+      <div class="card">
+        <h2>Müşteri bilgileri</h2>
+        <label class="field"><span>Ünvan / ad soyad</span><input type="text" /></label>
+        <label class="field"><span>Adres</span><input type="text" /></label>
+        <div class="row2">
+          <label class="field"><span>Telefon</span><input type="text" /></label>
+          <label class="field"><span>Cihazın bulunduğu bölüm</span><input type="text" /></label>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Cihaz bilgileri</h2>
+        <label class="field"><span>Marka / model</span><input type="text" /></label>
+        <label class="field"><span>Seri numarası</span><input type="text" /></label>
+        <div class="row3">
+          <label class="field"><span>Renkli sayaç</span><input type="text" /></label>
+          <label class="field"><span>Siyah beyaz sayaç</span><input type="text" /></label>
+          <label class="field"><span>Total sayaç</span><input type="text" /></label>
+        </div>
+      </div>
+    </section>
+
+    <section class="work">
+      <div class="head">
+        <h2>Kullanılan malzeme</h2>
+        <p>Kullanılmayan satırlar boş bırakılır.</p>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th class="c-no">No</th>
+            <th class="c-code">Parça kodu</th>
+            <th>Değişen parça / malzeme adı</th>
+            <th class="c-qty">Adet</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td></td><td></td><td></td></tr>
+          <tr><td>2</td><td></td><td></td><td></td></tr>
+          <tr><td>3</td><td></td><td></td><td></td></tr>
+          <tr><td>4</td><td></td><td></td><td></td></tr>
+          <tr><td>5</td><td></td><td></td><td></td></tr>
+          <tr><td>6</td><td></td><td></td><td></td></tr>
+          <tr><td>7</td><td></td><td></td><td></td></tr>
+          <tr><td>8</td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="writeblock">
+      <h2>Arıza sebebi</h2>
+      <div class="writelines">
+        <div class="wline"></div>
+        <div class="wline"></div>
+      </div>
+    </section>
+
+    <section class="writeblock">
+      <h2>Yapılan işlem</h2>
+      <div class="writelines">
+        <div class="wline"></div>
+        <div class="wline"></div>
+        <div class="wline"></div>
+        <div class="wline"></div>
+      </div>
+    </section>
+
+    <section class="signs">
+      <div class="sign">
+        <h2>Müşteri onayı</h2>
+        <label class="field"><span>Adı soyadı</span><input type="text" /></label>
+        <div class="space"><span class="ghost">İmza / kaşe</span></div>
+      </div>
+      <div class="sign right">
+        <h2>Teknisyen</h2>
+        <label class="field"><span>Adı soyadı / sicil</span><input type="text" /></label>
+        <div class="space"><span class="ghost">İmza</span></div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p>Bu rapor, belirtilen tarihte yapılan teknik işlemin kaydıdır. İmza, işin tamamlandığını ve cihazın çalışır durumda teslim edildiğini onaylar.</p>
+      <p class="mark">Cyprox Yetkili Teknik Servis</p>
+    </footer>
+  </article>
+</body>
+</html>
