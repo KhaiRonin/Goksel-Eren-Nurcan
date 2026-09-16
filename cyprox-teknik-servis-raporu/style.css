@@ -196,6 +196,14 @@ input[type="text"] {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4mm;
+  align-items: end;
+}
+
+.row3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3.4mm;
+  align-items: end;
 }
 
 .options {
@@ -259,29 +267,32 @@ tbody td:first-child {
   color: var(--slate);
 }
 
-.c-no { width: 8mm; }
-.c-code { width: 18mm; }
-.c-pcode { width: 22mm; }
-.c-qty { width: 12mm; }
+.c-no { width: 9mm; }
+.c-code { width: 34mm; }
+.c-qty { width: 16mm; }
 
-.notes {
+.writeblock {
   flex: 1;
   display: flex;
   flex-direction: column;
-  min-height: 30mm;
+  min-height: 17mm;
 }
 
-.ruled {
+.writeblock h2 {
+  margin-bottom: 1.4mm;
+}
+
+.writelines {
   flex: 1;
-  border: 0.5pt solid #8d99a5;
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 7.4mm,
-      #dde3e9 7.4mm,
-      #dde3e9 7.55mm
-    );
+  display: flex;
+  flex-direction: column;
+}
+
+.wline {
+  flex: 1;
+  min-height: 7.4mm;
+  max-height: 9mm;
+  border-bottom: 0.6pt solid var(--hair);
 }
 
 .signs {
